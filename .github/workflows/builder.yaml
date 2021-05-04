@@ -6,7 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-20.04
     steps:
-      - name: Check Out Ocde
+      - name: Check Out Code
         uses: actions/checkout@v2
       - name: Install node.js 14.x
         uses: actions/setup-node@v2
@@ -14,7 +14,7 @@ jobs:
           node-version: 14.x
       - name: Install dependencies
         run: npm clean-install
-      - name: Run Applivation
+      - name: Run Application
         run: nohup npm run start &
       - name: Run Stackhawk
         uses: stackhawk/hawkscan-action@v1.2.1
