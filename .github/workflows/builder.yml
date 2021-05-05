@@ -8,10 +8,10 @@ jobs:
     steps:
       - name: Check Out Code
         uses: actions/checkout@v2
-      - name: Install node.js 15.x
+      - name: Install node.js 14.x
         uses: actions/setup-node@v2
         with:
-          node-version: 15.x
+          node-version: 14.x
       - name: Install dependencies
         run: npm clean-install
       - name: Run Application
@@ -20,6 +20,7 @@ jobs:
         uses: stackhawk/hawkscan-action@v1.2.1
         with:
           apiKey: ${{ secrets.HAWK_API_KEY }}
+          configurationFiles: stackhawk.yml 
       
           
           
